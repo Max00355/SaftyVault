@@ -7,5 +7,5 @@ def get_dirs():
     sock = socket.socket()
     sock.connect(utils.connect)
     sock.send(json.dumps(data))
-    data = sock.recv(10240000)
+    data = sock.recv(1024000)
     return json.loads(data)['response']

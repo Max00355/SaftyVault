@@ -33,7 +33,7 @@ class Server:
             thread.start_new_thread(self.handle, (obj,))
     
     def handle(self, obj):
-        data = obj.recv(1024000000)
+        data = obj.recv(1024000)
         print data
         data = json.loads(data)
         if data['username'] == self.username and data['password'] == self.password:
